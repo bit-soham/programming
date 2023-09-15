@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                let elements = document.querySelectorAll('button'); // all buttons are sent to elments as a list
+                let result1 = document.querySelector('.result1'); // the place with class result is assigned to the variable
+                let result2 = document.querySelector('.result2');
+                let k = 0;
+                let l = 0;
+
+                elements.forEach(element => { // this does not cause a loop this just specifies that element is individual values of the loop elments
+                    // this addEventListener always is turned on by default and you can't stop it except with a parent function or a if statement
+                    // a for loop around it does not cause it to loop as add event listeners fxn is always active
+
+                    element.addEventListener('click', function() { // () does not mean put your input argument here
+
+                        // to access any attribute of button you have to use this
+                        if ((element.getAttribute('id') == 'Option4') && (k == 0)) {
+
+                            // it selects the thing in the document with the id ...  '#' + element.getAttribute('id') by concatenation of constant and the variable atttribute we got with the command element.getAttribute
+                            document.querySelector('#' + element.getAttribute('id')).style.backgroundColor = 'green';
+                            result1.innerHTML = 'Correct!';
+                            k++;
+                        } else if (element.getAttribute('id') == 'Submit') {
+                            let answer = document.querySelector('#response').value.toLowerCase().trim();
+                            if ((answer == 'switzerland') && (l == 0)) {
+                                document.querySelector('#response').style.backgroundColor = 'green';
+                                result2.innerHTML = 'Correct!';
+                                l++;
+                            } else if ((l == 0) && (answer != '')) {
+                                document.querySelector('#response').style.backgroundColor = 'red';
+                                result2.innerHTML = 'Incorrect';
+                                l++;
+                            }
+                        } else if (k == 0) { // check if any option has already been selected
+                            document.querySelector('#' + element.getAttribute('id')).style.backgroundColor = 'red';
+                            result1.innerHTML = 'Incorrect';
+                            k++;
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+                <div class="result1" style="font-size: large"></div>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <p>
+                    <button id="Option1">6 people per 1 sheep</button>
+                    <button id="Option2">3 people per 1 sheep</button>
+                    <button id="Option3">1 people per 1 sheep</button>
+                    <button id="Option4">1 people per 3 sheep</button>
+                    <button id="Option5">1 people per 6 sheep</button>
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                <div class="result2" style="font-size: large"></div>
+                <input autocomplete="off" autofocus id="response" type="text">
+                <button type="Submit" id="Submit">Check Answer</button>
+            </div>
+        </div>
+    </body>
+
+</html>
