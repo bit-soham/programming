@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: took the least user/ time for the cpu to process sorted50000 even though merge sort and was close i seperated them using random50000
+
+sort2 uses: merge sort
+
+How do you know?: took least time to complete random50000 ,took 2nd most time to do sorted and did random50000 very smoothly
+
+sort3 uses: selection sort
+
+How do you know?: took most time in random50000 and only one left

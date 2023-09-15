@@ -1,0 +1,10 @@
+Q: if songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+Answer: I would charectarize them as purple who are really enthusiastic and are entertained listening to music.
+They listen to music a lot and are passionate about it and can select the best songs from the bunch and they may even be craxy about music and listening to only the top trending music
+
+
+Q: Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+Answer: They should also take into account the frequency of listenig to songs
+Suppose he could be listening to lots of songs for a day suddenly when he was gloomy
+and he listens to music excessively only when he is sad or heartbroken so even
+if he is usualy a positive person the aura indicated would be misleading to the guy
