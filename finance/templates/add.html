@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h3 style="color: #537fbe;">Let's Buy Some More Stocks</h3>
+    <form action="/add" method="post"><br>
+        <div class="mb-3">
+            <label style="color: firebrick; font-family: URW Chancery L, fantasy">Current Saving: ${{cash}}</label>
+
+        </div>
+        <div class="mb-3">
+            <select name="method" class="form-select" aria-label="Default select example" style="width: 210px; margin: auto">
+                <option disabled selected>Mode of payment</option>
+                <option>VISA</option>
+                <option>MasterCard</option>
+                <option>Paypal</option>
+                <option>UPI</option>
+            </select>
+
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="name" name="amount" placeholder="Amount"  type="number" min="1">
+        </div>
+        <button class="btn btn-primary" type="submit">Transfer</button>
+    </form>
+{% endblock %}

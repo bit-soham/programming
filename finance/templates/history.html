@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block main %}
+
+<h2 style="font-size: 37px; color: #ea433b; ">History</h2><br>
+<table align="center" id="table" class="table table-info table-striped table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Date&Time</th>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price(perstock)</th>
+        <th>TOTAL</th>
+        <th>Method</th>
+    </tr>
+    {% for history in histories %}
+    <tr>
+        <td>{{history.id - subtract_id + 1}}</td>
+        <td>{{history.time_stamp}}</td>
+        <td id="cash">{{history.symbol_id}}</td>
+        <td>{{history.name}}</td>
+        <td class="shares">{{history.shares}}</td>
+        <td>{{history.price}}</td>
+        <td class="total">{{history.total}}</td>
+        <td class="method">{{history.method}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<script>
+    let totalELEMENTS = document.querySelectorAll(".total");
+    totalELEMENTS.forEach(function(element){
+        let total = element.textContent;
+        if (total[0] === '+'){
+            element.style.color = "green";
+        }
+        else if (total[0] === '-'){
+            element.style.color = "red";
+        }
+        else {
+            element.style.color = "purple";
+        }
+    });
+    let shareELEMENTS = document.querySelectorAll(".shares");
+    shareELEMENTS.forEach(function(element){
+        let share = element.textContent;
+        if (share[0] === '+'){
+            element.style.color = "green";
+        }
+        else if (share[0] === '-'){
+            element.style.color = "red";
+        }
+    });
+    let methodELEMENTS = document.querySelectorAll(".method");
+    methodELEMENTS.forEach(function(element){
+        let method = element.textContent;
+        if (method === 'SELL'){
+            element.style.color = "green";
+        }
+        else if (method === 'BUY'){
+            element.style.color = "red";
+        }
+        else {
+            element.style.color = "purple";
+        }
+    });
+
+</script>
+{% endblock %}

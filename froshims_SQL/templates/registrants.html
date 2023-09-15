@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form action="/">
+    <button type="submit">&lt&lt Back</button>
+    </form>
+    <h2>Registrants</h2>
+    <ol style="list-style-type: upper-roman">
+        <!-- <li>{{name}}: {{sport}}</li> but i passed the dictionary as a whole -->
+         {% for registrant in registrants %} <!-- it is like a python for loop to iterate over key of every key value pair of the dictionary -->
+        <li>{{registrant.name}} is registered for {{registrant.sport}}</li>
+        <form action = "/deregister" method="post">
+            <input name="id" type="hidden" value="{{registrant.id}}">
+            <input type="submit" value="Deregister">
+        </form>
+        <br>
+        {% endfor %}
+    </ol>
+
+{% endblock %}

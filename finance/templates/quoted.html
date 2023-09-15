@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block main %}
+
+<table id="qouted" align="center" class="table table-info table-striped table-bordered" style="width: 80vw">
+    <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Price Per Stock</th>
+    </tr>
+    <tr>
+        <td>{{symbol.symbol}}</td>
+        <td>{{symbol.name}}</td>
+        <td>{{symbol.price}}</td>
+    </tr>
+</table>
+<form action="/buy" align="center">
+    <input type="hidden" value="{{symbol.symbol}}" name="buysymbol">
+    <button class="btn btn-success" type="submit">BUY</button>
+</form>
+
+{% endblock %}

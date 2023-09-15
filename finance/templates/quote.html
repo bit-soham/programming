@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h2 style="color: #ea433b; text-align: center; font-family: Apple Chancery, monospace; padding: 10px">Symbol</h2>
+
+<form action="/quote" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="quote" name="quote" placeholder="(Eg: NLSX)" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Quote</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block main %}
+
+<h2 style="color: #f5b82e; text-shadow: 1px 1px 1px black; font-size: 30px">Portfolio of stocks</h2><br>
+<table align="center" class="table table-striped table" style="width: 80vw" id="portfolio">
+    <tr class="table-dark">
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price(perstock)</th>
+        <th>TOTAL</th>
+    </tr>
+    {% for stock in stocks %}
+    <tr>
+        <td>{{stock.symbol_id}}</td>
+        <td>{{stock.name}}</td>
+        <td>{{stock.shares}}</td>
+        <td>{{stock.price}}</td>
+        <td class="total">{{stock.total}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td style="border-bottom: 0px; background-color: white"></td>
+        <td style="border-bottom: 0px; background-color: white"></td>
+        <td style="border-bottom: 0px; background-color: white"></td>
+        <td class="table-dark" id="class">Cash Left:</td>
+        <td class="table-dark" id="class">${{cash_left}}</td>
+    </tr>
+
+
+</table>
+    <script>
+        let totalELEMENTS = document.querySelectorAll(".total");
+        totalELEMENTS.forEach(function(element){
+            let total = element.textContent;
+            if (total[0] === '+'){
+                element.style.color = "green";
+            }
+            else if (total[0] === '-'){
+                element.style.color = "red";
+            }
+        });
+    </script>
+
+{% endblock %}

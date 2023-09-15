@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h2 style="color: yellowgreen; font-size: 32px">Register</h2><br>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        console.log("hello");
+        document.addEventListener('keyup', function(){
+            let password = document.getElementById("password").value.trim();
+            let repeatpassword = document.getElementById("repeatpassword").value.trim();
+            if (password != repeatpassword && password != "" &&  repeatpassword != "") {
+                document.getElementById("warning").innerHTML = "( Password does not match )";
+            }
+            else{
+                document.getElementById("warning").innerHTML = "";
+            };
+        });
+    });
+    </script>
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <span>
+            <input class="form-control mx-auto w-auto" id="repeatpassword" name="repeatpassword" placeholder="Repeat Password" type="password">
+        <label id="warning" style="color: red; font-size: 0.7em; padding: 0px; margin-left: -50px; margin-bottom: 15px"></label><br>
+        </span>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

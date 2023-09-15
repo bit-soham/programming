@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block main %}
+<h3 style="padding: 5px; font-family: Apple Chancery, cursive; color: #2e944b">Buy</h3>
+<form action="/buy" method="post">
+    {% if symbol %}
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="buysymbol" name="buysymbol" placeholder="Symbol: (Ex: NLSX)" type="text" value="{{symbol}}">
+        </div>
+    {% else %}
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="buysymbol" name="buysymbol" placeholder="Symbol: (Ex: NLSX)" type="text">
+        </div>
+    {% endif %}
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="No. of shares" type="number" min="1">
+    </div>
+    <button class="btn btn-primary" type="submit">BUY</button>
+
+</form>
+{% endblock %}

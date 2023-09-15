@@ -1,0 +1,81 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+.portfolio th, td {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 20px;
+}
+.histories th, td {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 20px;
+}
+#select {
+    font-size: 21px;
+    line-height: 1.25em;
+    width: 90px;
+    color:  rgb(118, 6, 51);
+    font-family: Didot, serif
+}
+#select .option {
+
+    color:  rgb(118, 6, 51);
+    font-size: 1.1em;
+    text-shadow: 1px 1px 1px rgb(59, 52, 52);
+    font-family: Didot, serif
+}
+
+#No_of_shares {
+    width: 260px !important;
+}
+#table th{
+     color: brown;
+     font-family: URW Chancery L, cursive;
+     
+}
+h2, h3 {
+    font-family: Bradley Hand, monospace;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black
+}
+
+#qouted {
+    width: 600px;
+    border: 1px !important;
+    border-top: 1px red !important
+}
+#qouted th {
+    color: #ea433b;
+    font-family: Courier New, monospace;
+    font-size: 1.2em;
+}
+.td{
+    border-bottom: 0px;
+    background-color: white !important
+}
+#portfolio th,#class {
+    color: yellow;
+    font-family: Courier New, monospace;
+    font-size: 1.1em
+}

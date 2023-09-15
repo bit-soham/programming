@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block main %}
+
+<h2 align="center"style="font-size: 34px; color: #537fbe;">Sell</h2><br>
+<form action="/sell" method="post">
+    <div class="mb-3">
+        <select name="company" id="select" class="form-select" aria-label="Default select example" style="width: 260px; margin: auto; text-align: center; color: #537fbe"><br>
+            <option disabled selected>Select Company Symbol</option>
+            {% for company in shares %}
+                <option class="option" style="font-size: 0.95em"value="{{company.symbol_id}}">{{company.symbol_id}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3" style="width: 400px; margin: auto">
+        <input autocomplete="off" type="number" min="1" name="shares" class="form-control mx-auto w-auto" placeholder="No. of shares" style="margin: auto" id="No_of_shares">
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit">SELL</button>
+    </div>
+</form>
+{% endblock %}

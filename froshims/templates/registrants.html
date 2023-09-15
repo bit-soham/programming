@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <ul>
+        <!-- <li>{{name}}: {{sport}}</li> but i passed the dictionary as a whole -->
+         {% for name in registrants %} <!-- it is like a python for loop to iterate over key of every key value pair of the dictionary -->
+        <li>{{name}} is registered for {{registrants[name]}}</li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

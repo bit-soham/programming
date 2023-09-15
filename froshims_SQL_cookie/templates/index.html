@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    {% if session["name"] %}
+        <h1>Register
+
+        <form action="/logout">
+            <button type="submit">Log Out</button>
+        </form></h1>
+
+            <form action="/register" method="post">
+                <input name="name" value="{{session['name']}}" type="hidden">
+                <label> Name: {{session['name']}}&nbsp</label><br>
+                <select name="sport">
+                    <option disabled selected>Sport</option>
+                    {% for sport in sports %}
+                        <option value="{{ sport }}">{{sport}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Register</button>
+            </form>
+    {% else %}
+        You are not logged in. <a href="/login">Log in</a>
+    {% endif %}
+
+{% endblock %}
