@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
+                let input = document.querySelector('input');  // selecting from the document the on and only input tag
+
+                input.addEventListener('keyup', function(event) { // whenever the user releases a key the event takes place and the function isb carried out
+                    let name = document.querySelector('p');// the variable name is assign to the tag p
+                    if (input.value) { // means if the input has some value
+                        name.innerHTML = `hello, ${input.value}`; //her euse ` instead of ' in java script when you are about to show that on the screen
+                    }
+                    else {
+                        name.innerHTML = 'hello, whoever you are';
+                    }
+                });
+            });
+        </script>
+        <title>
+            hello,title
+        </title>
+    </head>
+    <body>
+        <form onsubmit="greet()"> <!-- on submit excecute greeety function
+            return false because we do not want to submit the form to somwhere else we just want our java script to take control of it-->
+            <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+            <button type="Submit">Greet</button>
+
+        </form>
+    </body>
+</html>

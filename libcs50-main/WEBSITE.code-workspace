@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "WEBSITE",
+			"path": "../../../OneDrive/Desktop/WEBSITE"
+		}
+	],
+	"settings": {
+		"tabnine.receiveBetaChannelUpdates": true,
+		"tabnine.experimentalAutoImports": false,
+		"tabnine.disableLineRegex": [],
+		"tabnine.disableFileRegex": []
+	}
+}

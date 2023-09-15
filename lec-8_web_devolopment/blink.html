@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <script>
+            function blink() {
+                let body = document.querySelector('body');
+                if (body.style.visibility == 'hidden') {
+                    body.style.visibility = 'visible';
+                } else {
+                    body.style.visibility = 'hidden';
+                }
+            }
+            // blink every 500ms window every thing in th window
+            window.setInterval(blink, 500); // not blink() because we want to call it after every 500 ms
+            // recursive
+        </script>
+        <title>
+            blink
+        </title>
+    </head>
+
+    <body>
+        hello, world
+    </body>
+
+</html>

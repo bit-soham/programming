@@ -1,0 +1,82 @@
+sqlite3 favorites.db
+
+SELECT * FROM favorites WHERE title = '....';
+UPDATE favorites SET title = 'Young Sheldon' WHERE title = 'The Office' OR 'The Office'
+
+
+$ sqlite3 shows.db
+sqlite> .schema
+CREATE TABLE genres (
+    show_id INTEGER NOT NULL,
+    genre TEXT NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id)
+);
+CREATE TABLE people (
+    id INTEGER,
+    name TEXT NOT NULL,
+    birth NUMERIC,
+    PRIMARY KEY(id)
+);
+CREATE TABLE ratings (
+    show_id INTEGER NOT NULL,
+    rating REAL NOT NULL,
+    votes INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id)
+);
+CREATE TABLE shows (
+    id INTEGER,
+    title TEXT NOT NULL,
+    year NUMERIC,
+    episodes INTEGER,
+    PRIMARY KEY(id)
+);
+CREATE TABLE stars (
+    show_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id),
+    FOREIGN KEY(person_id) REFERENCES people(id)
+);
+CREATE TABLE writers (
+    show_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id),
+    FOREIGN KEY(person_id) REFERENCES people(id)
+);
+sqlite>
+sqlite> SELECT * FROM people LIMIT 10;
+sqlite> SELECT * FROM shows LIMIT 10;
+SELECT * FROM stars LIMIT 10;
++---------+-----------+
+| show_id | person_id |
++---------+-----------+
+| 62614   | 378823    |
+| 62614   | 853892    |
+| 62614   | 393936    |
+| 62614   | 496420    |
+| 62614   | 333162    |
+| 62614   | 180174    |
+| 62614   | 165183    |
+| 62614   | 466749    |
+| 63881   | 625401    |
+| 63881   | 1933      |
++---------+-----------+
+this is linking shows table with people table
+
+SELECT title FROM shows WHERE id IN(SELECT show_id FROM genres WHERE genre = "Comedy");
+Here we see how the foriegn key show_id is used to link tables genre and shows  using show_id s the foriegn keu
+
+this how we link three tables
+SELECT title FROM shows WHERE id IN(SELECT show_id FROM stars WHERE person_id = (SELECT id FROM people WHERE name = 'Steve Carell'));
+OR Use join
+
+SELECT title FROM people
+   ...> JOIN stars ON people.id = stars.person_id
+   ...> JOIN shows ON stars.show_id = shows.id WHERE name = 'Steve Carell';
+
+index thes column such that search speeds go dowsn by  98%+
+CREATE INDEX table_index ON shows (title,year)
+CREATE TABLE stocks (
+symbol_id TEXT NOT NULL,
+name TEXT,
+shares INTEGER NOT NULL,
+price MONEY NOT NULL,

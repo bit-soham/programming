@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+        <script> // <!-- to write java script code -->
+            function greet()
+            {
+                //<!-- we are selecting a query that we get from the user in this document's webpage by default id is q nut we have set it to id=name therefore #name has to be mentioned to the Query selector-->
+                let name = document.querySelector('#name').value //<!-- uniquely selecting the element whose id is name then we take its value-->
+                alert('hello,' + name); //<!-- built in javascrpt function -->
+            }
+        </script>
+        <title>
+            hello,title
+        </title>
+    </head>
+    <body>
+        <form onsubmit="greet()"; return="false"> <!-- on submit excecute greeety function
+            return false because we do not want to submit the form to somwhere else we just want our java script to take control of it-->
+            <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+            <button type="Submit">Greet</button>
+
+        </form>
+    </body>
+</html>
